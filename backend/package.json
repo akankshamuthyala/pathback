@@ -23,9 +23,7 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
     "uuid": "^11.1.0",
-    "zod": "^3.24.2"
-  },
-  "devDependencies": {
+    "zod": "^3.24.2",
     "@types/bcryptjs": "^2.4.6",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
@@ -35,7 +33,9 @@
     "@types/node": "^22.13.4",
     "@types/uuid": "^10.0.0",
     "mongodb-memory-server": "^10.1.4",
-    "tsx": "^4.19.3",
     "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.3"
   }
 }
