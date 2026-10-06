@@ -1,0 +1,201 @@
+{
+  "info": {
+    "name": "SETHU — Multimodal AI Platform API",
+    "_postman_id": "sethu-api-collection-v1",
+    "description": "Postman API collection for SETHU Consent-First Multimodal AI Platform for Missing-Person Investigation Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "System Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "health"]
+        }
+      }
+    },
+    {
+      "name": "Auth - Request OTP",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"phoneNumber\": \"+15550000002\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/request-otp",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "auth", "request-otp"]
+        }
+      }
+    },
+    {
+      "name": "Auth - Verify OTP",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"phoneNumber\": \"+15550000002\",\n  \"otp\": \"123456\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/verify-otp",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "auth", "verify-otp"]
+        }
+      }
+    },
+    {
+      "name": "Auth - Login",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"phoneNumber\": \"+15550000002\",\n  \"password\": \"Investigator@123\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/login",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "auth", "login"]
+        }
+      }
+    },
+    {
+      "name": "Cases - List",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+        "url": {
+          "raw": "{{baseUrl}}/api/cases",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "cases"]
+        }
+      }
+    },
+    {
+      "name": "Cases - Get By ID",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+        "url": {
+          "raw": "{{baseUrl}}/api/cases/SET-2026-001",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "cases", "SET-2026-001"]
+        }
+      }
+    },
+    {
+      "name": "AI - Run Case Summary",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+        "url": {
+          "raw": "{{baseUrl}}/api/ai/cases/SET-2026-001/summary",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "ai", "cases", "SET-2026-001", "summary"]
+        }
+      }
+    },
+    {
+      "name": "AI - Run Age-Aware Appearance",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+        "url": {
+          "raw": "{{baseUrl}}/api/ai/cases/SET-2026-001/appearance-analysis",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "ai", "cases", "SET-2026-001", "appearance-analysis"]
+        }
+      }
+    },
+    {
+      "name": "AI - Run Risk Assessment",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+        "url": {
+          "raw": "{{baseUrl}}/api/ai/cases/SET-2026-001/risk-assessment",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "ai", "cases", "SET-2026-001", "risk-assessment"]
+        }
+      }
+    },
+    {
+      "name": "Patterns - List Clusters",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+        "url": {
+          "raw": "{{baseUrl}}/api/patterns",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "patterns"]
+        }
+      }
+    },
+    {
+      "name": "Patterns - Run Analysis",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+        "url": {
+          "raw": "{{baseUrl}}/api/patterns/run-analysis",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "patterns", "run-analysis"]
+        }
+      }
+    },
+    {
+      "name": "Reviews - Queue",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+        "url": {
+          "raw": "{{baseUrl}}/api/reviews/queue",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "reviews", "queue"]
+        }
+      }
+    },
+    {
+      "name": "Consent - Update Protocol",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"Identity Verified, Consent Pending\",\n  \"scope\": \"INVESTIGATOR_MANAGED\",\n  \"reason\": \"Subject located at sanctuary; consent verification initiated.\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/cases/SET-2026-003/consent",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "cases", "SET-2026-003", "consent"]
+        }
+      }
+    },
+    {
+      "name": "Audit - View Logs",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+        "url": {
+          "raw": "{{baseUrl}}/api/audit-logs",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "audit-logs"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000" },
+    { "key": "token", "value": "" }
+  ]
+}
