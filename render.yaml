@@ -42,13 +42,11 @@ services:
         sync: false
 
   # ====================================================================
-  # 2. PathBack Frontend Static Site
+  # 2. PathBack Frontend Static Site (Global CDN)
   # ====================================================================
   - type: web
     name: pathback-frontend
     runtime: static
-    plan: free
-    region: oregon
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
