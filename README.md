@@ -36,7 +36,7 @@
 
 Traditional missing-person platforms often function as unrestricted public face-search tools. This poses catastrophic risks to vulnerable individuals who may have fled domestic abuse, violent households, or human trafficking.
 
-**SETHU enforces a strict 9-stage Consent Lifecycle:**
+**Pathback enforces a strict 9-stage Consent Lifecycle:**
 1. **Not Yet Located**
 2. **Located, Identity Pending**
 3. **Identity Verified, Consent Pending** *(The Consent Wall is actively raised; all coordinates, phone numbers, and addresses are locked)*
@@ -51,7 +51,7 @@ Traditional missing-person platforms often function as unrestricted public face-
 
 ## 🔬 Multimodal AI Architecture (Powered by Anthropic Claude)
 
-SETHU implements a dedicated backend AI service layer using the official Anthropic Claude SDK (`@anthropic-ai/sdk`), backed by strict **Zod validation schemas** and deterministic fallback models for zero-setup execution:
+Pathback implements a dedicated backend AI service layer using the official Anthropic Claude SDK (`@anthropic-ai/sdk`), backed by strict **Zod validation schemas** and deterministic fallback models for zero-setup execution:
 
 ```
                           ┌──────────────────────────┐
@@ -219,7 +219,7 @@ Open your browser at **`http://localhost:3000`**. Use the **1-Click Demo Evaluat
 
 ## 🧭 Complete 3–5 Minute Evaluation Flow
 
-1. **Landing Page:** Review the SETHU Bridge concept, Responsible AI rules, and category alignment.
+1. **Landing Page:** Review the Pathback concept, Responsible AI rules, and category alignment.
 2. **1-Click Login:** Click **"Investigator"** on the top bar (Inspector Maya Sen).
 3. **Operational Dashboard:** Inspect Recharts analytics (Risk Distribution, Case Status, Sighting Volume).
 4. **Open Case File:** Click into `SET-2026-001` (Aarav Sharma). Notice how exact coordinate data is protected.
